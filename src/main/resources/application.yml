@@ -1,13 +1,17 @@
 server:
+#配置端口号
   port: 8080
+#  配置上下文
   servlet:
     context-path: /
 spring:
+#配置数据库
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql:///xm?characterEncoding=utf-8&serverTimezone=UTC
+    url: jdbc:mysql:///crm?useUnicode=true&characterEncoding=UTF-8&userSSL=false&serverTimezone=GMT%2B8
     username: root
     password: root
-
+#    配置druid连接池
+    type: com.alibaba.druid.pool.DruidDataSource
 
 

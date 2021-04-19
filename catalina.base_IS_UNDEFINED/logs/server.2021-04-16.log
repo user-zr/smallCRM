@@ -1,0 +1,72 @@
+2021-04-16 12:16:04.654 [main] INFO  com.zr.smallcrm.SmallcrmApplication - Starting SmallcrmApplication using Java 1.8.0_241 on DESKTOP-4FRF9J0 with PID 27224 (E:\MyFirstProject\smallcrm\target\classes started by 23634 in E:\MyFirstProject\smallcrm)
+2021-04-16 12:16:04.657 [main] INFO  com.zr.smallcrm.SmallcrmApplication - No active profile set, falling back to default profiles: default
+2021-04-16 12:16:05.238 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.zr.smallcrm.dao]' package. Please check your configuration.
+2021-04-16 12:16:06.179 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-04-16 12:16:06.187 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-16 12:16:06.187 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-16 12:16:06.187 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-16 12:16:06.342 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-04-16 12:16:06.344 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-04-16 12:16:06.344 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1645 ms
+2021-04-16 12:16:06.424 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-04-16 12:16:06.560 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-16 12:16:06.719 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityController': Unsatisfied dependency expressed through field 'service'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityServiceImpl': Unsatisfied dependency expressed through field 'activityDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.zr.smallcrm.workbench.dao.ActivityDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2021-04-16 12:16:06.719 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2021-04-16 12:16:06.721 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2021-04-16 12:16:06.730 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-16 12:16:06.809 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field activityDao in com.zr.smallcrm.workbench.service.impl.ActivityServiceImpl required a bean of type 'com.zr.smallcrm.workbench.dao.ActivityDao' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.zr.smallcrm.workbench.dao.ActivityDao' in your configuration.
+
+2021-04-16 12:18:14.576 [main] INFO  com.zr.smallcrm.SmallcrmApplication - Starting SmallcrmApplication using Java 1.8.0_241 on DESKTOP-4FRF9J0 with PID 1172 (E:\MyFirstProject\smallcrm\target\classes started by 23634 in E:\MyFirstProject\smallcrm)
+2021-04-16 12:18:14.592 [main] INFO  com.zr.smallcrm.SmallcrmApplication - No active profile set, falling back to default profiles: default
+2021-04-16 12:18:14.936 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.zr.smallcrm.dao]' package. Please check your configuration.
+2021-04-16 12:18:15.373 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-04-16 12:18:15.373 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-16 12:18:15.373 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-04-16 12:18:15.373 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-16 12:18:15.560 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-04-16 12:18:15.576 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-04-16 12:18:15.576 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 953 ms
+2021-04-16 12:18:15.654 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2021-04-16 12:18:15.764 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2021-04-16 12:18:15.904 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityController': Unsatisfied dependency expressed through field 'service'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'activityServiceImpl': Unsatisfied dependency expressed through field 'activityDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.zr.smallcrm.workbench.dao.ActivityDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2021-04-16 12:18:15.904 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2021-04-16 12:18:15.904 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2021-04-16 12:18:15.904 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-16 12:18:15.967 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field activityDao in com.zr.smallcrm.workbench.service.impl.ActivityServiceImpl required a bean of type 'com.zr.smallcrm.workbench.dao.ActivityDao' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.zr.smallcrm.workbench.dao.ActivityDao' in your configuration.
+

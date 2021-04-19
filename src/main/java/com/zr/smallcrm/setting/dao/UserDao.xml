@@ -3,5 +3,20 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zr.smallcrm.setting.dao.UserDao">
-    <select id="login" resultType="com.zr.smallcrm.setting.model.User"></select>
+    <sql id="catalog">
+      loginAct,name,loginPwd,email,expireTime,lockState,deptno,allowIps,createTime,createBy,editTime,editBy
+    </sql>
+
+    <select id="login" resultType="com.zr.smallcrm.setting.model.User">
+        select id,
+        <include refid="catalog"/>
+        from user
+        where loginAct = #{arg0} and loginPwd = #{arg1}
+    </select>
+    <select id="getUserList" resultType="com.zr.smallcrm.setting.model.User">
+        select id,
+        <include refid="catalog"/>
+        from user
+    </select>
+
 </mapper>
