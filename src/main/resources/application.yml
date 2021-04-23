@@ -4,6 +4,10 @@ server:
 #  配置上下文
   servlet:
     context-path: /
+#    jsp热部署
+    jsp:
+      init-parameters:
+        development: true
 spring:
 #配置数据库
   datasource:

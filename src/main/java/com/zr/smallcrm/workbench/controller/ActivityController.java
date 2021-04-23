@@ -22,7 +22,10 @@ import java.util.Map;
 import java.util.UUID;
 
 @Controller
+@RequestMapping("/activity")
 public class ActivityController {
+
+
     @Autowired
     private ActivityService service;
 

@@ -85,6 +85,64 @@
         on a.owner = u.id
         where a.id=#{id}
     </select>
+    <select id="getActivityListByCid" resultType="com.zr.smallcrm.workbench.model.Activity">
+        select
+
+        a.id ,
+        a.name ,
+        u.name as owner ,
+        a.startDate,
+        a.endDate
+
+
+        from activity a
+        join user u
+        on a.owner = u.id
+        join clue_activity_relation car
+        on a.id = car.activityId
+
+        where car.clueId = #{clueId}
+    </select>
+    <select id="getActivityByName" resultType="com.zr.smallcrm.workbench.model.Activity">
+        select
+
+        a.id ,
+        a.name ,
+        u.name as owner ,
+        a.startDate,
+        a.endDate
+
+
+        from activity a
+        join user u
+        on a.owner = u.id
+
+        where a.name like '%' #{arg0} '%' and a.id not in(
+          select
+
+          activityId
+
+          from clue_activity_relation
+
+          where clueId = #{arg1}
+        )
+    </select>
+    <select id="getActivityListByName" resultType="com.zr.smallcrm.workbench.model.Activity">
+        select
+
+        a.id ,
+        a.name ,
+        u.name as owner ,
+        a.startDate,
+        a.endDate
+
+
+        from activity a
+        join user u
+        on a.owner = u.id
+
+        where a.name like '%' #{arg0} '%'
+    </select>
 
 
 </mapper>

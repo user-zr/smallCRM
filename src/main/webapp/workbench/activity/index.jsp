@@ -40,7 +40,7 @@
 
                 // $("#crow")
                 $.ajax({
-                    url: "/getUserList",
+                    url: "/activity/getUserList",
                     type: "get",
                     datatype: "json",
                     success: function (data) {
@@ -70,7 +70,7 @@
 
 
                 $.ajax({
-                    url: "/saveActivity",
+                    url: "/activity/saveActivity",
                     data: {
                         "owner": $.trim($("#create-owner").val()),
                         "name": $.trim($("#create-name").val()),
@@ -90,7 +90,7 @@
                             pageList(1, $("#activityPage").bs_pagination("getOption", "rowsPerPage"))
 
                             //清空模态框里的内容
-                            // $("#activityAddForm")[0].reset()
+                            $("#activityAddForm")[0].reset()
 
                             //关闭模态窗口
                             $("#createActivityModal").modal("hide")
@@ -129,7 +129,7 @@
                 $("#search-endDate").val($.trim($("#hidden-endDate").val()))
 
                 $.ajax({
-                    url: "/pageList",
+                    url: "/activity/pageList",
                     type: "get",
                     data: {
                         "pageNo": pageNo,
@@ -149,7 +149,8 @@
 
                             html += '<tr class="active">'
                             html += '<td><input type="checkbox" name="xz" value="' + n.id + '"/></td>'
-                            html += '<td><a style="text-decoration: none; cursor: pointer;" onclick="window.location.href=\'/detail?id='+n.id+'\';">'+n.name+'</a></td>';                            html += '<td>' + n.owner + '</td>'
+                            html += '<td><a style="text-decoration: none; cursor: pointer;" onclick="window.location.href=\'/activity/detail?id=' + n.id + '\';">' + n.name + '</a></td>';
+                            html += '<td>' + n.owner + '</td>'
                             html += '<td>' + n.startDate + '</td>'
                             html += '<td>' + n.endDate + '</td>'
                             html += '</tr>'
@@ -226,12 +227,11 @@
                             param += ","
                         }
                     }
-                    alert(param)
 
                     if (confirm("确定删除所选中的记录吗")) {
 
                         $.ajax({
-                            url: "/deleteActivity",
+                            url: "/activity/deleteActivity",
                             data: {"id": param},
                             type: "post",
                             dataType: "json",
@@ -272,7 +272,7 @@
                     var aid = xzs.val()
 
                     $.ajax({
-                        url: "/getUserListAndActivity",
+                        url: "/activity/getUserListAndActivity",
                         data: {"aid": aid},
                         type: "get",
                         dataType: "json",
@@ -303,7 +303,7 @@
             //为更新按钮绑定操作
             $("#updateBtn").click(function () {
                 $.ajax({
-                    url: "/updateActivity",
+                    url: "/activity/updateActivity",
                     data: {
                         "id": $.trim($("#edit-id").val()),
                         "owner": $.trim($("#edit-owner").val()),

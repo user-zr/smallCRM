@@ -1,12 +1,120 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.zr.smallcrm.workbench.dao.ClueDao">
-	
-	
-  	
+
+
+    <insert id="saveClue">
+        insert into clue (
+            id,
+            fullname,
+            appellation,
+            owner,
+            company,
+            job,
+            email,
+            phone,
+            website,
+            mphone,
+            state,
+            source,
+            createBy,
+            createTime,
+            description,
+            contactSummary,
+            nextContactTime,
+            address
+        )
+        values (
+            #{id},
+            #{fullname},
+            #{appellation},
+            #{owner},
+            #{company},
+            #{job},
+            #{email},
+            #{phone},
+            #{website},
+            #{mphone},
+            #{state},
+            #{source},
+            #{createBy},
+            #{createTime},
+            #{description},
+            #{contactSummary},
+            #{nextContactTime},
+            #{address}
+        )
+    </insert>
+
+    <select id="getClueList" resultType="com.zr.smallcrm.workbench.model.Clue">
+        select
+        c.id,
+        c.fullname ,
+        c.company ,
+        c.phone ,
+        c.mphone ,
+        c.source ,
+        u.name owner ,
+        c.state
+        from clue c join user u
+        on c.owner = u.id
+        <where>
+            <if test="fullname!=null and fullname!=''">
+                c.fullname like '%' #{fullname} '%'
+            </if>
+            <if test="company!=null and company!=''">
+                c.company like '%' #{company} '%'
+            </if>
+            <if test="phone!=null and phone!=''">
+                c.phone like '%' #{phone} '%'
+            </if>
+            <if test="mphone!=null and mphone!=''">
+                c.mphone like '%' #{mphone} '%'
+            </if>
+            <if test="source!=null and source!=''">
+                c.source like '%' #{source} '%'
+            </if>
+            <if test="state!=null and state!=''">
+                c.state like '%' #{state} '%'
+            </if>
+            <if test="owner!=null and owner!=''">
+                u.owner like '%' #{owner} '%'
+            </if>
+
+        </where>
+
+        order by
+        c.createTime
+    </select>
+    <select id="detail" resultType="com.zr.smallcrm.workbench.model.Clue">
+        select
+        c.id,
+        c.fullname ,
+        c.company ,
+        c.appellation,
+        c.phone ,
+        c.mphone ,
+        c.email,
+        c.website,
+        c.source ,
+        u.name owner ,
+        c.createBy,
+        c.createTime,
+        c.editBy,
+        c.editTime,
+        c.state,
+        c.description,
+        c.contactSummary,
+        c.nextContactTime,
+        c.address,
+        c.job
+         from clue c join user u
+         on c.owner = u.id
+         where c.id = #{id}
+    </select>
 </mapper>
 
 

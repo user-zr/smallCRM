@@ -1,5 +1,6 @@
 package com.zr.smallcrm.workbench.dao;
 
+import com.zr.smallcrm.workbench.model.Activity;
 import com.zr.smallcrm.workbench.model.ActivityRemark;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -18,4 +19,6 @@ public interface ActivityRemarkDao {
     int saveRemark(ActivityRemark remark);
 
     int updateRemark(ActivityRemark ar);
+
+
 }

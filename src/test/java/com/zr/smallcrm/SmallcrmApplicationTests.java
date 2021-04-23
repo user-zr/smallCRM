@@ -11,8 +11,17 @@ class SmallcrmApplicationTests {
 
     @Test
     void contextLoads() {
-        System.out.println(MD5Util.getMD5("123"));
-
+        System.out.println(testss());
     }
 
+    private int testss() {
+        int j=1;
+        try {
+            int i = 1 / 0;
+        } catch (Exception e) {
+           return j=2;
+        } finally {
+           return j=3;
+        }
+    }
 }

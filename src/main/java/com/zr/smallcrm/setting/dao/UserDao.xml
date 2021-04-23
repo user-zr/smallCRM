@@ -13,6 +13,7 @@
         from user
         where loginAct = #{arg0} and loginPwd = #{arg1}
     </select>
+
     <select id="getUserList" resultType="com.zr.smallcrm.setting.model.User">
         select id,
         <include refid="catalog"/>

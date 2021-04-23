@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.zr.smallcrm.workbench.model.ClueActivityRelation">
-	
-	
-  	
+<mapper namespace="com.zr.smallcrm.workbench.dao.ClueActivityRelationDao">
+    <insert id="addActivity">
+        insert into clue_activity_relation(id,clueId,activityId) values(#{id},#{clueId},#{activityId})
+    </insert>
+
+
+    <delete id="unbund">
+        delete from clue_activity_relation where activityId = #{id}
+    </delete>
 </mapper>
 
 

@@ -18,6 +18,9 @@
         var cancelAndSaveBtnDefault = true;
 
         $(function () {
+
+
+
             $("#remark").focus(function () {
                 if (cancelAndSaveBtnDefault) {
                     //设置remarkDiv的高度为130px
@@ -65,7 +68,7 @@
             $("#saveBtn").click(function () {
 
                 $.ajax({
-                    url: "/saveRemark",
+                    url: "/activity/saveRemark",
                     data: {
                         "noteContent": $.trim($("#remark").val()),
                         "activityId": "${a.id}"
@@ -105,7 +108,7 @@
             $("#updateBtn").click(function () {
                 var id =$("#remarkId").val()
                 $.ajax({
-                    url: "/updateRemark",
+                    url: "/activity/updateRemark",
                     data: {
                         "id":id,
                         "noteContent": $.trim($("#noteContent").val())
@@ -132,7 +135,7 @@
 
         function showRemarkList() {
             $.ajax({
-                url: "/getRemarkListByAid",
+                url: "/activity/getRemarkListByAid",
                 data: {
                     "id": "${a.id}"
                 },
@@ -173,7 +176,7 @@
         function deleteRemark(id) {
             // alert("123")
             $.ajax({
-                url: "/deleteRemark",
+                url: "/activity/deleteRemark",
                 data: {
                     "id": id
                 },
